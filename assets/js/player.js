@@ -225,6 +225,8 @@ window.addEventListener("message", function (e) {
 					"width": "100%",
 					"height": "100%",
 					"autostart": false,
+                                        "defaultBandwidthEstimate": 5000000,
+                                        "preload": "auto",
 					"displayPlaybackLabel": true,
 					"primary": "html5"
 				});
