@@ -83,12 +83,12 @@ window.addEventListener("message", function (e) {
 				return e.childNodes.length === 0 ? "" : e.childNodes[0].nodeValue;
 			}
 
-			function addSourceOld(url, id, n) {
+			function addSource(url, id, n) {
 				pM2[id].resolve();
 				s[id] = 'empty';
 			}
 
-			function addSource(url, id, needs_proxy) {
+			function addSourceOld(url, id, needs_proxy) {
 				var fileSize = "";
 				var http = (window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject("Microsoft.XMLHTTP"));
 				if (needs_proxy) final_url = allorigins + url;
