@@ -195,7 +195,9 @@ window.addEventListener("message", function (e) {
 					"height": "100%",
 					"autostart": false,
 					"displayPlaybackLabel": true,
-					"primary": "html5"
+					"primary": "html5",
+					"defaultBandwidthEstimate": 5000000,
+                    "preload": "auto",
 				});
 
 				//Variaveis para o botao de baixar.
