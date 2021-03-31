@@ -1,5 +1,3 @@
-<!DOCTYPE html>
-<html>
 <head>
 	<title>Crunchyroll Player</title>
 	<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,500&display=swap" rel="stylesheet">
@@ -14,21 +12,27 @@
 
 	  gtag('config', 'UA-154158844-1');
 	</script>
+	<link rel="stylesheet" type="text/css" href="assets/css/player.css?v=1">
+	<link rel="stylesheet" type="text/css" href="assets/css/download_dialog.css?v=1">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 	<script src="assets/js/jwplayer.js"></script>
 	<script src="assets/js/player.js"></script>
 </head>
 <body>
 	<div class="loading_container">
-		<div class="loading_icon">
-			<svg width="30px"  height="30px"  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid" class="lds-rolling" style="background: none;">
-				<circle cx="50" cy="50" fill="none" ng-attr-stroke="{{config.color}}" ng-attr-stroke-width="{{config.width}}" ng-attr-r="{{config.radius}}" ng-attr-stroke-dasharray="{{config.dasharray}}" stroke="#ffffff" stroke-width="10" r="35" stroke-dasharray="164.93361431346415 56.97787143782138" transform="rotate(159.051 50 50)">
-					<animateTransform attributeName="transform" type="rotate" calcMode="linear" values="0 50 50;360 50 50" keyTimes="0;1" dur="1s" begin="0s" repeatCount="indefinite"></animateTransform>
-				</circle>
-			</svg>
-		</div>
-		<div class="loading_text_container">
-			<div class="loading_text">Seu video iniciara em instantes (^-^)<span class="corta_linha"></span>Aguardando dados da stream..</div>
+		<div class="box">
+			<div class="img">
+				<img src="logo.png">
+			</div>
+			<h2>Crunchyroll<br><span>Premium Bypass</span></h2>
+			<p>Seu video já vai começar, aguardando dados da stream.</p>
+			<h3><a href="https://github.com/Slxxwz" target="_blank">Slxxwz</a><br><span>Criador</span></h3>
+			<span>
+				<ul>
+					<li><a href="https://github.com/slxxwz/slxxwz.github.io" target="_blank" ><i class="fa fa-github" aria-hidden="true"></i></a></li>
+					<li><a href="https://github.com/slxxwz/slxxwz.github.io/issues" target="_blank" ><i class="fa fa-font-awesome" aria-hidden="true"></i></a></li>
+				</ul>
+			</span>
 		</div>
 	</div>
 	<div class="modal" style="transform: translate3d(0px, 0px, 0px);visibility: hidden;">
@@ -38,32 +42,152 @@
 		   	<span class="partdditem quality not-copyable">1080p</span>
 		   	<span id="1080p_down_size" class="partdditem size not-copyable">0 MB</span>
 		   	<a id="1080p_down_url" class="partdditem down-icon" href="javascript:void(0);" target="_top" download></a>
+			<span class="partdditem quality not-copyable">1080p<sup>HD</sup></span>
+		   	<span id="1080p_down_size" class="partdditem size not-copyable"><img src="assets/icon/fetching-icon.svg"/> MB</span>
+		   	<a id="1080p_down_url" class="partdditem down-icon" href="javascript:void(0);" target="_top"></a>
 		   </div>
 		   <div class="download-item">
 		   	<span class="partdditem hdlabel not-copyable"><sup>HD</sup></span>
 		   	<span class="partdditem quality not-copyable">720p</span>
 		   	<span id="720p_down_size" class="partdditem size not-copyable">0 MB</span>
 		   	<a id="720p_down_url" class="partdditem down-icon" href="javascript:void(0);" target="_top" download></a>
+			<span class="partdditem quality not-copyable">720p<sup>HD</sup></span>
+		   	<span id="720p_down_size" class="partdditem size not-copyable"><img src="assets/icon/fetching-icon.svg"/> MB</span>
+		   	<a id="720p_down_url" class="partdditem down-icon" href="javascript:void(0);" target="_top"></a>
 		   </div>
 		   <div class="download-item">
 		   	<span class="partdditem hdlabel not-copyable"><sup></sup></span>
 		   	<span class="partdditem quality not-copyable">480p</span>
 		   	<span  id="480p_down_size" class="partdditem size not-copyable">0 MB</span>
 		   	<a id="480p_down_url" class="partdditem down-icon" href="javascript:void(0);" target="_top" download></a>
+		   	<span  id="480p_down_size" class="partdditem size not-copyable"><img src="assets/icon/fetching-icon.svg"/> MB</span>
+		   	<a id="480p_down_url" class="partdditem down-icon" href="javascript:void(0);" target="_top"></a>
 		   </div>
 		   <div class="download-item">
 		   	<span class="partdditem hdlabel not-copyable"><sup></sup></span>
 		   	<span class="partdditem quality not-copyable">360p</span>
 		   	<span id="360p_down_size" class="partdditem size not-copyable">0 MB</span>
 		   	<a id="360p_down_url" class="partdditem down-icon" href="javascript:void(0);" target="_top" download></a>
+		   	<span id="360p_down_size" class="partdditem size not-copyable"><img src="assets/icon/fetching-icon.svg"/> MB</span>
+		   	<a id="360p_down_url" class="partdditem down-icon" href="javascript:void(0);" target="_top"></a>
 		   </div>
 		   <div class="download-item">
 		   	<span class="partdditem hdlabel not-copyable"><sup></sup></span>
 		   	<span class="partdditem quality not-copyable">240p</span>
 		   	<span id="240p_down_size" class="partdditem size not-copyable">0 MB</span>
 		   	<a id="240p_down_url" class="partdditem down-icon" href="javascript:void(0);" target="_top" download></a>
+		   	<span id="240p_down_size" class="partdditem size not-copyable"><img src="assets/icon/fetching-icon.svg"/> MB</span>
+		   	<a id="240p_down_url" class="partdditem down-icon" href="javascript:void(0);" target="_top"></a>
 		   </div>
 	</div>
 	<div id="player_div"></div>
 </body>
 </html>
+<style>
+	html {
+		position: relative;
+		min-width: 310px;
+		min-height: 470px;
+		height: 100%;
+	}
+	body {
+		margin:0;
+		padding:0;
+		font-family:sans-serif;
+		background:#fbfbfb;
+	}
+	.loading_container {
+		position:absolute;
+		top:50%;
+		left:50%;
+		transform:translate(-50%,-50%);
+		width:290px;
+		min-height:450px;
+		background:#fff;
+		box-shadow:0 20px 50px rgba(0,0,0,.1);
+		border-radius:10px;
+		transition:0.5s;
+	}
+	.loading_container:hover {
+		box-shadow:0 30px 70px rgba(0,0,0,.2);
+	}
+	.loading_container .box {
+		position:absolute;
+		top:50%;
+		left:0;
+		transform:translateY(-50%);
+		text-align:center;
+		padding:20px;
+		box-sizing:border-box;
+		width:100%;
+	}
+	.loading_container .box .img {
+		width:120px;
+		height:120px;
+		margin:0 auto;
+		border-radius:50%;
+		overflow:hidden;
+	}
+	.loading_container .box .img img {
+		width:100%;
+		height:100%;
+	}
+	.loading_container .box h3 {
+		font-size:14px;
+		color:#262626;
+		margin:20px auto;
+	}
+	.loading_container .box a {
+		font-size:14px;
+		color:#262626;
+		margin:20px auto;
+		text-decoration: none;
+	}
+	.loading_container .box h3 span {
+		font-size:10px;
+		background:#e5f4fa;
+		color:#4a91d1;
+		display:inline-block;
+		margin: 3px;
+		padding:4px 10px;
+		border-radius:15px;
+	}
+	.loading_container .box h2 {
+		font-size:20px;
+		color:#262626;
+		margin:20px auto;
+	}
+	.loading_container .box h2 span {
+		font-size:14px;
+		background:#f47521;
+		color:#fff;
+		display:inline-block;
+		padding:4px 10px;
+		border-radius:15px;
+	}
+	.loading_container .box p {
+		color:#262626;
+	}
+	.loading_container .box span {
+		display:inline-flex;
+	}
+	.loading_container .box ul {
+		margin:0;
+		padding:0;
+	}
+	.loading_container .box ul li {
+		list-style:none;
+		float:left;
+	}
+	.loading_container .box ul li a {
+		display:block;
+		color:#aaa;
+		margin:0 10px;
+		font-size:20px;
+		transition:0.5s;
+		text-align:center;
+	}
+	.loading_container .box ul li:hover a {
+		color:#f47521;
+	}
+	</style> 
